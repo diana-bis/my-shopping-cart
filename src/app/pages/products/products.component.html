@@ -1,0 +1,15 @@
+<div style="display: flex; flex-wrap: wrap; gap: 20px; margin-top: 15px">
+    
+    <div *ngFor="let product of products" style="flex: 1 1 calc(33.333% - 20px); border: 1px solid #ccc; padding: 10px; box-sizing: border-box; display: flex; align-items: center;">
+        <img [src]="product.image" alt="{{ product.name }}" width="120" style="margin: 15px">
+    
+        <div> 
+            <h3>{{ product.name }}</h3>
+            <p>Price: ${{ product.price }}</p>
+            <button (click)="addToCart(product)">Add to Cart</button>
+        </div>    
+        
+        
+
+    </div>
+</div>

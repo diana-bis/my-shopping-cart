@@ -1,0 +1,21 @@
+<div class="auth-container">
+    <h2>Login</h2>
+
+    <form (ngSubmit)="onLogin()" #loginForm="ngForm">
+        <input type="email" name="email" [(ngModel)]="email" placeholder="Your Email" required />
+        <br>
+
+        <input type="password" name="password" [(ngModel)]="password" placeholder="Your Password" required minlength="6" />
+        <br>
+
+        <button type="submit" [disabled]="!loginForm.valid">Login</button>
+
+        <p style="color: red;" *ngIf="errorMessage">{{ errorMessage }}</p>
+    </form>
+
+    <p>
+        Don't have an account?
+        <a routerLink="/register">Create an account</a>
+    </p>
+</div>
+

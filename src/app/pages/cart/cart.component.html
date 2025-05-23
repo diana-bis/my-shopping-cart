@@ -1,0 +1,22 @@
+<h2>Your Cart</h2>
+
+<div *ngIf="cart.length == 0">
+    🛒 Your cart is empty.
+</div>
+
+<div *ngFor="let item of cart; let i = index" style="display: flex; border: 1px solid #ccc; padding: 10px; margin-bottom: 15px;">
+    <img [src]="item.product.image" alt="{{ item.product.name }}" width="120" style="margin: 15px">
+
+    <div>
+        <h3>{{ item.product.name }}</h3>
+        <p>Price: ${{ item.product.price }}</p>
+        <p>Quantity: {{ item.quantity }}</p>
+        <button (click)="removeItem(i)">Remove</button>  
+    </div>
+
+</div>
+
+<div *ngIf="cart.length > 0" style="margin-top: 20px;">
+    <h3>Total Price: ${{ getTotalPrice() }}</h3>
+    <button (click)="clearCart()">Clear Cart</button>
+</div>

@@ -1,0 +1,13 @@
+<nav style="background: #f0f0f0; padding: 10px; display: flex; justify-content: space-between; align-items: center;">
+    <div>
+        <a routerLink="/products" style="margin-right: 20px; font-size: 18px; text-decoration: none;">📦 Products</a>
+        <a routerLink="/cart" style="font-size: 18px; text-decoration: none;">🛒 Cart</a> 
+    </div>
+    
+    <div style="display: flex; align-items: center; font-size: 16px; gap: 15px;">
+        <span>🛍️ <strong>{{ getTotalItems() }}</strong> items in cart</span>
+        👤 {{ loggedInUser.email }} 
+        <button (click)="logout()" style="margin-left: 10px;">Logout</button>
+    </div>
+</nav>
+
