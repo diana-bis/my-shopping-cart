@@ -2,7 +2,10 @@
     <h2>Register</h2>
 
     <form (ngSubmit)="onRegister()" #form="ngForm">
-        <input type="email" name="email" [(ngModel)]="email" placeholder="Your Email" required />
+        <input type="email" name="email" [(ngModel)]="email" placeholder="Your Email" required email #emailField="ngModel"/>
+            <div *ngIf="emailField.invalid && (emailField.dirty || emailField.touched)">
+                <p style="color: red;">Please enter a valid email address.</p>
+            </div>
         <br>
 
         <input type="password" name="password" [(ngModel)]="password" placeholder="Password" required minlength="6" />
